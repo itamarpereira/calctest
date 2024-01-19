@@ -1,0 +1,14 @@
+<%= simple_form_for(@solid) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :gender, label: 'Gender: male or female', error: 'Gender is mandatory, please specify one' %>
+    <%= f.input :dose, label: 'Dose(Sv)', error: 'Example: 100 mSv = 0.1 Sv' %>
+    <%= f.input :exposure, label: 'Age at exposure' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
