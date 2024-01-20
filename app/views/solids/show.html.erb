@@ -1,7 +1,12 @@
 <% if @solid.gender == "male" %>
   <h2>Male</h2>
-  <h2>RR = <%= (0.45 * @solid.dose)*(2.718281**((-0.026)*(@solid.exposure - 25 ))) %></h2>
+  <h2>ERR =  <%= (0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>RR =  <%= 1+(0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>PC =  <%= ((0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))/(1+(0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))))).round(2) *100 %>% </h2>
 <% elsif %>
-  <h2>female</h2>
-  <h2>RR = <%= (0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>Female</h2>
+  <h2>ERR =  <%= (0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>RR =  <%= 1+(0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>PC =  <%= ((0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))/(1+(0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))))).round(2) *100 %>% </h2>
 <% end %>
+<%= link_to 'Back', solids_path %>
