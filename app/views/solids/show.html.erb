@@ -1,2 +1,7 @@
-<h2>Gender <%= @solid.gender %></h2>
-<h2>Multipicação(teste) <%= @solid.dose * @solid.exposure %></h2>
+<%= if @solid.gender = "male" %>
+  <h2><%= @solid.gender %></h2>
+  <h2>RR = <%= 0.45 * @solid.dose * 2.718281828**(-0.026(@solid.exposure - 25 ))%></h2>
+<%= else %>
+  <h2>female</h2>
+  <h2>RR = <%= 0.77 * @solid.dose * 2.718281828**(-0.026(@solid.exposure - 25 ))%></h2>
+<%= end %>
