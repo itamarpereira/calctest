@@ -5,8 +5,8 @@
   <h2>PC =  <%= ((0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))/(1+(0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))))).round(2) *100 %>% </h2>
 <% elsif %>
   <h2>Female</h2>
-  <h2>ERR =  <%= (0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
-  <h2>RR =  <%= 1+(0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
-  <h2>PC =  <%= ((0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))/(1+(0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))))).round(2) *100 %>% </h2>
+  <h2>Excesso de Risco Relativo (ERR) =  <%= (0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>Risco Relativo (RR) =  <%= 1+(0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))) %></h2>
+  <h2>Probabilidade de Causa(PC) =  <%= ((0.77 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 )))/(1+(0.45 * @solid.dose)*(2.718281**(-0.026*(@solid.exposure - 25 ))))).round(2) *100 %>% </h2>
 <% end %>
 <%= link_to 'Back', solids_path %>
